@@ -11,7 +11,6 @@
 #print(t)
 t = input()
 secuencia = t.split()
-largo = len(secuencia)
 secuencia.reverse()
 elementos = []
 for i in secuencia:
