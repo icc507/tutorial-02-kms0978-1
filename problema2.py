@@ -10,7 +10,7 @@
 #t = input()
 #print(t)
 t = input()
-secuencia = list(t.split())
+secuencia = t.split()
 largo = len(secuencia)
 secuencia.reverse()
 elementos = []
