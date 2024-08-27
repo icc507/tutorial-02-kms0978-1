@@ -9,6 +9,23 @@
 #		  mundo 44
 #La salida debe ser
 #         ('mundo', 44, 20, 90, 'hola', 'mundo', 44)
+#t = input()
+#m = input()
+#print(m)
 t = input()
 m = input()
-print(m)
+union = tuple(m.split())+tuple(t.split())+tuple(m.split())
+elementos_modif = []
+for elemento in union:
+  elemento = elemento.strip()
+  if elemento.isdigit():
+    elementos_modif.append(int(elemento))
+  elif "." in elemento:
+    try:
+      elementos_modif.append(float(elemento))
+    except ValueError:
+      elementos_modif.append(f'{elemento}')
+  else:
+    elementos_modif.append(f'{elemento}')
+tupla = tuple(elementos_modif)
+print(tupla)
