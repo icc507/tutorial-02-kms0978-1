@@ -7,5 +7,23 @@
 #         20 90 hola jiji 77
 #La salida debe ser
 #         (77, 'jiji', 'hola', 90, 20)
+#t = input()
+#print(t)
 t = input()
-print(t)
+secuencia = list(t.split())
+largo = len(secuencia)
+secuencia.reverse()
+elementos = []
+for i in secuencia:
+  i = i.strip() 
+  if i.isdigit():
+    elementos.append(int(i))
+  elif "." in i:
+    try:
+      elementos.append(float(i))
+    except ValueError:
+      elementos.append(f'{i}')
+  else:
+    elementos.append(f'{i}')
+secuencia_lista = tuple(elementos)
+print(secuencia_lista)
