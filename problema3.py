@@ -14,6 +14,27 @@
 def arbolTrinario(numero):
   return [numero, [], [], []]
 
+def insertaEnArbolTrinario(arbol, numero):
+  if arbol == []:
+    arbol += arbolTrinario(numero)
+  elif numero < arbol[0]:
+    insertaEnArbolTrinario(arbol[1], numero)
+  elif numero == arbol[0]:
+    insertaEnArbolTrinario(arbol[2], numero)
+  else:
+    insertaEnArbolTrinario(arbol[3], numero)
+
+def estaEnArbolTrinario(arbol, numero):
+  if arbol == []:
+    return False
+  elif numero == arbol[0]:
+    return True
+  elif numero < arbol[0]:
+    return estaEnArbolTrinario(arbol[1], numero)
+  elif numero == arbol[0]:
+    return estaEnArbolTrinario(arbol[2], numero)
+  else:
+    return estaEnArbolTrinario(arbol[3], numero)
 #uso
 t = input()
 m = t.split()
